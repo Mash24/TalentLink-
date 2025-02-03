@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+    <div class="container">
+        <div class="register_container"> <!-- Create the container boc where the login details are shown -->
+            <div class="register_title">
+                <span>Sign Up</span>
+            </div>
+<!-- Registration form -->
+            <form id="registerForm">
+                <div class="input_wrapper">
+                    <input type="text" id="name" class="input_field" required>
+                    <label for="name" class="label">Full Name</label>
+                    <i class="fa-regular fa-user icon"></i>
+                    <small class="error-message"></small> <!-- Error message element-->
+                </div>
+
+                <div class="input_wrapper">
+                    <input type="text" id="username" class="input_field" required>
+                    <label for="username" class="label">Username</label>
+                    <i class="fa-solid fa-user icon"></i>
+                    <small class="error-message"></small> <!-- Error message placeholder-->
+                </div>
+
+                <div class="input_wrapper">
+                    <label for="gender">Gender</label>
+                    <select name="gender" id="gender" class="input_field">
+                        <option value="" disabled selected> Select your gender</option>
+                        <option value="male"> Male</option>
+                        <option value="female"> Female</option>
+                        <option value="non-binary"> Non-Binary </option>
+                        <option value="other"> Other</option>
+                        <option value="prefer-not-to-say"> Prefer not to say</option>
+                    </select>
+                </div>
+
+                <div class="input_wrapper">
+                    <input type="tel" id="phone_number" class="input_field" required>
+                    <label for="phone_number" class="label">Phone Number</label>
+                    <i class="fa-solid fa-phone icon"></i>
+                    <small class="error-message"></small> <!-- Error message placeholder-->
+                </div>
+
+                <div class="input_wrapper">
+                    <label for="dob" class="label">Date of Birth</Date></label> <br> <!-- This is another way to do it but I prefer using date picker -->
+                    <input type="date" id="dob" class="input_field" required onfocus="this.showPicker()">
+                    <i class="fa-solid fa-calendar-days icon"></i>
+                    <small class="error-message"></small> <!-- Error message placeholder-->
+                </div>
+                
+
+                <div class="input_wrapper">
+                    <input type="text" id="address" class="input_field" required>
+                    <label for="address" class="label">Address</label>
+                    <i class="fa-solid fa-location-dot icon"></i>
+                    <small class="error-message"></small> <!-- Error message placeholder-->
+                </div>
+
+                <div class="input_wrapper">
+                    <input type="text" id="city" class="input_field" required>
+                    <label for="city" class="label">City</label>
+                    <i class="fa-solid fa-city icon"></i>
+                    <small class="error-message"></small> <!-- Error message placeholder-->
+                </div>
+
+                <div class="input_wrapper">
+                    <input type="email" id="email" class="input_field" required>
+                    <label for="email" class="label">Email</label>
+                    <i class="fa-regular fa-envelope icon"></i>
+                    <small class="error-message"></small> <!-- Error message placeholder-->
+                </div>
+        
+                <div class="input_wrapper">
+                    <input type="password" id="pass" class="input_field" required>
+                    <label for="pass" class="label">Password</label>
+                    <i class="fa-solid fa-lock icon"></i>
+                    <small class="error-message"></small> <!--Error message placeholder-->
+                </div>
+                
+<!-- This part will be used in JavaScript to show the checklist of password requirements inside the di for validation -->
+
+                <ul class="checklist">
+                    <li>Password must contain a lowercase letter</li>
+                    <li>Password must contain a uppercase letter</li>
+                    <li>Password must contain a number</li>
+                    <li>Password must contain a special character</li>
+                    <li>Password must be at least 8 characters long</li>
+                    <li>Password must not contain any consecutive numbers</li>
+                    <li>Password must match the confirm password field</li>
+                    <li>Password must not contain spaces</li>
+                    <li>Password cannot contain username or email address</li>
+                </ul>
+                
+                <div class="input_wrapper">
+                    <input type="password" id="confirm_pass" class="input_field" required>
+                    <label for="confirm_pass" class="label">Confirm Password</label>
+                    <i class="fa-solid fa-lock icon"></i>
+                    <small class="error-message"></small> <!--Error message placeholder-->
+                </div>
+
+                <div class="user_type">
+                    <!-- <div>
+                        <p>Gender: </p>
+                    </div>
+                    <div>
+                        <input type="radio" id="male" name="gender" value ="Male">
+                        <label for="male"> Male</label>
+                    </div> -->
+
+                    <div>
+                        <!-- <label for="userType">Choose User Type:</label> Can come replace with <label for="userType">Choose User Type:</label> -->
+                        <input type="radio" id="jobSeeker" name="userType" value ="jobSeeker" checked>
+                        <label for="jobSeeker">Job Seeker</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" id="employer" name="userType" value ="employer">
+                        <label for="employer"> Employer</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" id="both" name="userType" value ="both">
+                        <label for="both"> Both</label>
+                    </div>
+                </div>
+        
+                    <div class="input_wrapper">
+                        <button type = "submit" id="registerButton" class ="input-submit"> Sign Up </button>
+                    </div>
+
+                    <div class="login_redirect">
+                        <span>Already have an account? <a href="login.html">Login</a></span>
+                        <span><a href="index.html">Go back to Home Page</a></span>
+                    </div>
+
+                    <div class="terms_and_conditions">
+                        <p>By signing up you agree to our Terms and Conditions.</p>
+                    </div>
+                    
+                    <div class="privacy_policy">
+                        <p>Privacy Policy</p>
+                    </div>
+                    
+                </form>
+                <div class="success_message"></div>
+            </div>
+
+            <!-- Footer Section -->
+             <!-- <section>
+                <div class="copyright">
+                    <p>&copy; 2025 JobMatchPro. All rights reserved.</p>
+                </div>
+             </section> -->
+<!-- ---------------------------------------------------------------------------------- -->
+    <script src="register.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</body>
+</html>

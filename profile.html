@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Junction</title>
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Create Your Job Seeker Profile</h1>
+    <form id="profileForm">
+      <div class="form-group">
+        <label for="firstname">First Name:</label>
+        <input type="text" id="firstname" name="firstname" required>
+      </div>
+      <div class="form-group">
+        <label for="lastname">Last Name:</label>
+        <input type="text" id="lastname" name="lastname" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="qualifications">Qualifications:</label>
+        <textarea id="qualifications" name="qualifications" rows="4" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="experience">Experience (in years):</label>
+        <input type="number" id="experience" name="experience" required>
+      </div>
+      <div class="form-group">
+        <label for="skills">Skills:</label>
+        <input type="text" id="skills" name="skills" placeholder="e.g., JavaScript, Python, Project Management" required>
+      </div>
+      <button type="submit">Save Profile</button>
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

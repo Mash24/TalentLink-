@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login_container"> <!-- Create the container boc where the login details are shown -->
+            <div class="login_title">
+                <span>Login</span>
+            </div>
+
+            <form id="loginForm">
+                <div class="input_wrapper">
+                    <input type="text" id="user" class="input_field" required>
+                    <label for="user" class="label">Username</label>
+                    <i class="fa-regular fa-user icon"></i>
+                    <small class="error-message"></small> <!-- Error message element-->
+                </div>
+        
+                <div class="input_wrapper">
+                    <input type="password" id="pass" class="input_field" required>
+                    <label for="pass" class="label">Password</label>
+                    <i class="fa-solid fa-lock icon"></i>
+                    <small class="error-message"></small> <!--Error message placeholder-->
+                </div>
+        
+                <div class="remember-forgot">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Remember Me</label>
+                    </div>
+        
+                    <div class="forgot">
+                        <a href="#">Forgot password</a>
+                    </div>
+                </div>
+        
+                    <div class="input_wrapper">
+                        <button type = "submit" class ="input-submit"> Login </button>
+                    </div>
+
+        
+                <div class="create_account">
+                    <span>Dont have an account? <a href="#">Create Account</a></span>
+                </div>
+            </div>
+        </form>
+        <script src="login.js"></script>
+                           
+</body>
+</html>

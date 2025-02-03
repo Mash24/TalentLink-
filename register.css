@@ -1,0 +1,323 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #b5afaf;
+    --secondary-color: #b9b9b9;
+    --black-color: #020101;
+    --background-image: url(images/sign_up.jpg);
+    --font-size-large: 1.875rem; /* 30px */
+    --font-size-medium: 1rem; /* 16px */
+    --font-size-small: 0.75rem; /* 12px */
+    --border-radius: 0.9375rem; /* 15px */
+    --input-height: 3.4375rem; /* 55px */
+    --input-padding: 1.25rem 3.375rem; /* 20px 54px */
+    --box-shadow: 0px 0px 0.625rem 0.125rem rgba(0, 0, 0, 0.2);
+    --transition-duration: 0.3s;
+    --hover-background: #fff6f6;
+    --hover-color: var(--primary-color);
+    --container-width: 28.125rem; /* 450px */
+    --container-padding: 7.5em 2.5em 4em 2.5em;
+    --media-query-width: 35.25rem; /* 564px */
+}
+
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap');
+
+/* *,
+*:before,
+*:after {
+    box-sizing: inherit;
+} */
+
+
+body{
+    background-position: center;
+    background-image: var(--background-image);
+    background-repeat: no-repeat;  /*the image will not dublicate */
+    background-size: cover; /*cover the whole screen */
+    background-attachment: fixed; /* the image will not move when scrolling down */
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center; /*Moves to the center of the page*/
+    background-color: rgba(0, 0, 0, 0.2); /*To make the background semi-transparent*/
+}
+
+.register_container{
+    position: relative;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    width: var(--container-width); 
+    border: 2px solid var(--primary-color);
+    padding: var(--container-padding);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    color: var(--secondary-color);
+}
+
+/* To position title in the middle of the container and inside a small box */
+.register_title{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    display: flex;
+    transform: translateX(-50%);
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    background-color: var(--primary-color);
+    border-radius: 0 0 20px 20px;
+    height: 70px;
+}
+
+
+.register_title span{
+    color: var(--black-color);
+    font-size: var(--font-size-large);
+}
+
+/* To add the slanting edges on the register_title box and make it look like a triangle shape and give it a shadow effect on the left */
+
+.register_title::before{
+    content: "";
+    top: 0;
+    left: -15%;
+    position: absolute;
+    border-top-right-radius: 50%;
+    width: 30px;
+    height: 30px;
+    box-shadow: 15px 0 0 0 var(--primary-color);
+    background: transparent;
+}
+
+/* To add the slanting edges on the register_title box and make it look like a triangle shape and give it a shadow effect on the right side of the box */
+
+.register_title::after{
+    content: ""; 
+    top: 0;
+    position: absolute;
+    height: 30px;
+    right: -15%;
+    width: 30px;
+    background: transparent;
+    border-top-left-radius: 50%;
+    box-shadow: -15px 0 0 0 var(--primary-color);
+}
+
+.input_wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.input_field{
+    width: 100%;
+    font-size: var(--font-size-medium);
+    height: var(--input-height);
+    color: var(--secondary-color);
+    background: transparent; /* To remove white colors from text box */
+    padding-inline: var(--input-padding);
+    border-radius: 30px;
+    border: 2px solid var(--primary-color);
+    outline: none;
+}
+
+.input_field:focus{
+    border-color: #fff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+#name{
+    margin-bottom: 10px;
+}
+
+.label{
+    position: absolute;
+    transition: 0.2s;
+    top: 15px;
+    left: 20px;
+}
+
+.input_field:focus ~ .label, 
+.input_field:valid ~ .label{
+    position: absolute;
+    font-size: var(--font-size-small);
+    top: -10px;
+    left: 20px;
+    background-color: var(--primary-color);
+    color: var(--black-color);
+    border-radius: 30px;
+    padding: 0 10px;
+}
+
+.icon{
+    position: absolute;
+    font-size: 20px;
+    top: 18px;
+    right: 25px  
+}
+
+
+.input-submit{
+    background: #fff6f6;
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 500;
+    border: none;
+    transition: var(--transition-duration);
+}
+
+.checklist {
+    list-style: none;
+    padding: 0;
+}
+
+.checklist li {
+    color: red;
+    font-size: 0.9rem;
+}
+
+.checklist li.valid {
+    color: green;
+    text-decoration: line-through; 
+}
+
+.error-message {
+    display: block;
+    font-size: var(--font-size-small);
+    color: red;
+    margin-top: 5px;
+}
+
+/* To create a radio button for user type selection and style them to match the design of the website and change their color when checked and hover over them */
+
+.user_type {
+    display: flex;
+    flex-direction: row; /* Change this line to use 'row' instead of 'column'*/
+    justify-content: center; /* Align items horizontally */
+    align-items: center; /* Align items vertically */
+    gap: 1rem; /* Add spacing between buttons */
+    margin-bottom: 20px; /* Add margin to create space above the button */
+}
+
+.user_type label {
+    font-size: var(--font-size-medium);
+}
+
+.user_type input[type="radio"]:checked + label {
+    color: var(--primary-color);
+}
+
+.user_type input[type="radio"]:not(:checked):hover {
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.user_type input[type="radio"]:hover {
+    border: 2px solid var(--primary-color);
+}
+.user_type input[type="radio"]:focus {
+    outline: none;
+}
+
+.input-submit:hover{
+    background: var(--secondary-color);
+}
+
+.create_account{
+    text-align: center;
+}
+
+.create_account a {
+    font-weight: 500;
+}
+
+/* login_redirect link */
+
+.login_redirect {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--font-size-small);
+    margin-top: 20px;
+    color: var(--secondary-color);
+}
+
+.login_redirect a{
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.terms_and_conditions, .privacy_policy{
+    text-align: center; /* Center the text */
+    font-size: var(--font-size-small); /* Adjust font size as needed */
+    margin-top: 20px; /* Add some vertical spacing */
+    color: var(--secondary-color);
+}
+
+/* Privacy policy link */
+
+.privacy_policy{
+    text-align: center;
+    margin-top: 20px; /* Add some vertical spacing */
+    justify-content: center; /* Center the text */
+    align-items: center;
+}
+
+.privacy_policy p:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Styling for terms and conditions */
+
+.terms_and_conditions{
+    text-align: center;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.terms_and_conditions p, .privacy_policy p{
+    margin: 0;
+}
+
+/* Media query to adjust styles for smaller screens */
+@media only screen and (max-width: var(--media-query-width) ) {
+    .container{
+        padding: 20px;
+    }
+
+    .register_container{
+        padding: 7.5em 1.5em 4em 1.5em;
+        width: 90%;
+    }
+}
