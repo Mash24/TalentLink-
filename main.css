@@ -1,0 +1,68 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+:root {
+    --primary-color: #b5afaf;
+    --secondary-color: #b9b9b9;
+    --black-color: #020101;
+    --background-image: url(images/sign_up.jpg);
+    --font-size-large: 1.875rem; /* 30px */
+    --font-size-medium: 1rem; /* 16px */
+    --font-size-small: 0.75rem; /* 12px */
+    --border-radius: 0.9375rem; /* 15px */
+    --input-height: 3.4375rem; /* 55px */
+    --input-padding: 1.25rem 3.375rem; /* 20px 54px */
+    --box-shadow: 0px 0px 0.625rem 0.125rem rgba(0, 0, 0, 0.2);
+    --transition-duration: 0.3s;
+    --hover-background: #fff6f6;
+    --hover-color: var(--primary-color);
+    --container-width: 28.125rem; /* 450px */
+    --container-padding: 7.5em 2.5em 4em 2.5em;
+    --media-query-width: 35.25rem; /* 564px */
+}
+
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+
+}
+
+@import "components/header";
+@import "components/footer";
+@import "components/hero";
+@import "components/about";
+@import "components/services";
+@import "components/contact";
+
+
+/* Header */
+.navbar {
+    background-color: var(--primary-color); 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    min-height: 4rem; /* 64px */
+    height: 6.25rem; /* 100px */
+    padding: 0 1.25rem; /* 16px */
+    box-shadow: var(--box-shadow);
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 1.25rem; /* 20px */
+    margin-left: auto;
+}
+
+.menu li a {
+    text-decoration: none; /* removes the underline below the tag */
+    color: var(--black-color);
+    font-size: var(--font-size-medium);
+    transition: color var(--transition-duration);
+}
